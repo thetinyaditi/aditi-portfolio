@@ -19,11 +19,12 @@ frameworks — just open it or drop it on any static host (Netlify, GitHub Pages
 - Google Fonts (Playfair Display + Plus Jakarta Sans); no other dependencies
 - SEO/meta + Open Graph tags
 
-## Things to swap in
-1. **Headshot** — replace the placeholder file `aditi-hero.jpg` (referenced in the
-   hero `<img>`). A portrait crop around 4:5 works best.
-2. **CV download** — the *Download CV* button links to `#`. Point its `href`
-   (the `#cvBtn` anchor in the hero) at the real CV file or link.
+## Assets in the repo
+- **Headshot** — `aditi-hero.png` (800×800), shown as a circular portrait in the hero.
+  To change it, replace the file (keep the name, or update the `<img src>` and the
+  `og:image` meta tag).
+- **CV** — `Aditi_Singh_General_CV.docx`, linked from the *Download CV* button.
+  Swap the file (or point the `#cvBtn` anchor elsewhere) to update it.
 
 ## Run locally
 Just open `index.html` in a browser, or serve the folder:
