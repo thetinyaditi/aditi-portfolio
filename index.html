@@ -131,7 +131,7 @@
     }
 
     /* parallax layers get GPU hinting; JS sets the translate */
-    .hero-copy, .hero-photo { will-change: transform; }
+    .hero-copy, .hero-photo, [data-parallax] { will-change: transform; }
 
     header.nav {
       position: fixed;
@@ -206,7 +206,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      padding-top: 6rem;
+      padding: 7rem 0 4rem;
     }
     .hero::before { /* faint editorial gridline */
       content: "";
@@ -817,7 +817,7 @@
   <!-- ===================== EXPERIENCE ===================== -->
   <section class="experience pad" id="experience">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Track record</span>
         <h2 class="section-title reveal d1">Experience that <em>compounds</em>.</h2>
         <p class="reveal d2">Three roles across three international markets, each one a study in coordinating people, systems, and outcomes under real constraints. Tap any role to open it.</p>
@@ -881,7 +881,7 @@
   <!-- ===================== VOLUNTEERING ===================== -->
   <section class="volunteering pad" id="volunteering">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Beyond the day job</span>
         <h2 class="section-title reveal d1" style="color:var(--cream);">Volunteering.</h2>
         <p class="reveal d2" style="color:#b3ada2;">Helping Berlin's international community build the careers they came here for.</p>
@@ -911,7 +911,7 @@
   <!-- ===================== SKILLS ===================== -->
   <section class="skills pad" id="skills">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Capabilities</span>
         <h2 class="section-title reveal d1">A toolkit built for <em>delivery</em>.</h2>
         <p class="reveal d2">Strategy without execution is a wish. These are the skills I use to make sure the work actually ships.</p>
@@ -966,7 +966,7 @@
   <!-- ===================== PROJECTS ===================== -->
   <section class="projects pad" id="projects">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Selected work</span>
         <h2 class="section-title reveal d1">Things I've <em>built</em>.</h2>
         <p class="reveal d2">Systems, tools, and research, not just deliverables. Hover any card to see what's under the hood.</p>
@@ -1009,7 +1009,7 @@
   <!-- ===================== EDUCATION ===================== -->
   <section class="education pad" id="education">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Academic foundation</span>
         <h2 class="section-title reveal d1">Education.</h2>
       </div>
@@ -1044,7 +1044,7 @@
   <!-- ===================== CERTIFICATIONS ===================== -->
   <section class="certs pad" id="certs">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Credentials</span>
         <h2 class="section-title reveal d1">Certifications.</h2>
       </div>
@@ -1062,7 +1062,7 @@
   <!-- ===================== METRICS ===================== -->
   <section class="metrics pad" id="metrics">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">By the numbers</span>
         <h2 class="section-title reveal d1" style="color:var(--cream);">Impact, <em>measured</em>.</h2>
         <p class="reveal d2" style="color:#b3ada2;">The work speaks in outcomes. These are a few of them.</p>
@@ -1136,23 +1136,37 @@
     const heroEl = document.querySelector('.hero');
     const heroCopy = document.querySelector('.hero-copy');
     const heroFrame = document.querySelector('.hero-photo .frame');
+    const parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let ticking = false;
     function updateScroll() {
       const y = window.scrollY;
+      const vh = window.innerHeight;
 
       // nav background
       nav.classList.toggle('scrolled', y > 40);
 
       // thin top progress bar
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const docH = document.documentElement.scrollHeight - vh;
       progress.style.transform = 'scaleX(' + (docH > 0 ? Math.min(y / docH, 1) : 0) + ')';
 
-      // subtle hero parallax (only while the hero is on screen)
-      if (!reduceMotion && heroEl && y < heroEl.offsetHeight) {
-        if (heroFrame) heroFrame.style.transform = 'translate3d(0,' + (y * 0.18) + 'px,0)';
-        if (heroCopy)  heroCopy.style.transform  = 'translate3d(0,' + (y * 0.06) + 'px,0)';
+      if (!reduceMotion) {
+        // hero: gentle upward drift at differing rates (never pushes content past the fold)
+        if (heroEl && y < heroEl.offsetHeight) {
+          if (heroFrame) heroFrame.style.transform = 'translate3d(0,' + (-y * 0.12) + 'px,0)';
+          if (heroCopy)  heroCopy.style.transform  = 'translate3d(0,' + (-y * 0.045) + 'px,0)';
+        }
+        // persistent parallax: elements ease toward the viewport centre as they pass
+        for (let i = 0; i < parallaxEls.length; i++) {
+          const el = parallaxEls[i];
+          const r = el.getBoundingClientRect();
+          if (r.bottom > -120 && r.top < vh + 120) {
+            const speed = parseFloat(el.dataset.parallax) || 0.06;
+            const fromCentre = (r.top + r.height / 2) - vh / 2;
+            el.style.transform = 'translate3d(0,' + (-fromCentre * speed) + 'px,0)';
+          }
+        }
       }
       ticking = false;
     }
