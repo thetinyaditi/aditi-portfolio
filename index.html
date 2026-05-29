@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditi Singh — MBA · AI-Fluent Operations & Project Management · Berlin</title>
-  <meta name="description" content="MBA graduate specialising in AI, Project Management & Operations — 4+ years across 3 international markets. Based in Berlin. EU work authorised." />
+  <title>Aditi Singh, MBA · AI-Fluent Operations &amp; Project Management · Berlin</title>
+  <meta name="description" content="MBA graduate specialising in AI, Project Management & Operations. 4+ years across 3 international markets. Based in Berlin. EU work authorised." />
   <meta name="author" content="Aditi Singh" />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aditi Singh — AI-Fluent Operations & Project Management" />
-  <meta property="og:description" content="MBA graduate specialising in AI, Project Management & Operations — 4+ years across 3 international markets. Berlin-based. EU work authorised." />
+  <meta property="og:title" content="Aditi Singh, AI-Fluent Operations & Project Management" />
+  <meta property="og:description" content="MBA graduate specialising in AI, Project Management & Operations. 4+ years across 3 international markets. Berlin-based. EU work authorised." />
   <meta property="og:image" content="aditi-hero.png" />
   <meta property="og:url" content="https://aditisingh2209portfolio.netlify.app" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
@@ -44,6 +44,7 @@
 
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --label: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
 
       --maxw: 1240px;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -86,7 +87,7 @@
        SHARED TYPE
        ============================================================ */
     .eyebrow {
-      font-family: var(--sans);
+      font-family: var(--label);
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.32em;
@@ -149,9 +150,10 @@
 
     nav.links { display: flex; align-items: center; gap: 2.2rem; }
     nav.links a {
+      font-family: var(--label);
       font-size: 0.82rem;
       font-weight: 500;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       color: var(--cream);
       opacity: 0.82;
       position: relative;
@@ -252,7 +254,8 @@
     }
     .hero.loaded .hero-tags { opacity: 1; transform: none; }
     .hero-tags span {
-      font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase;
+      font-family: var(--label);
+      font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
       border: 1px solid rgba(245,240,235,0.22);
       padding: 0.45rem 0.95rem; border-radius: 100px;
       color: #cfc8bd;
@@ -332,6 +335,7 @@
     .scroll-cue {
       position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+      font-family: var(--label);
       font-size: 0.66rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,240,235,0.5);
       opacity: 0; transition: opacity 1s var(--ease) 1.3s; z-index: 3;
     }
@@ -381,7 +385,7 @@
       display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
       padding: 1.25rem 0; border-bottom: 1px solid var(--line);
     }
-    .fact dt { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8378; font-weight: 600; }
+    .fact dt { font-family: var(--label); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8378; font-weight: 600; }
     .fact dd { font-family: var(--serif); font-size: 1.05rem; text-align: right; color: var(--charcoal); }
     .fact dd small { display:block; font-family: var(--sans); font-size: 0.75rem; color:#8a8378; letter-spacing: 0.02em; }
 
@@ -415,11 +419,11 @@
       cursor: pointer;
       width: 100%; text-align: left; background: none; border: 0; font-family: inherit; color: inherit;
     }
-    .exp-yr { font-family: var(--serif); font-size: 0.95rem; color: var(--accent); font-weight: 600; white-space: nowrap; }
+    .exp-yr { font-family: var(--label); font-size: 0.82rem; letter-spacing: 0.06em; color: var(--accent); font-weight: 600; white-space: nowrap; }
     .exp-role { }
     .exp-role h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 600; }
     .exp-role .org { font-size: 0.9rem; color: #8a8378; margin-top: 0.2rem; }
-    .exp-loc { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8378; white-space: nowrap; }
+    .exp-loc { font-family: var(--label); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8378; white-space: nowrap; }
     .exp-toggle {
       width: 38px; height: 38px; border-radius: 50%;
       border: 1px solid var(--line);
@@ -440,6 +444,41 @@
       content: ""; position: absolute; left: 0; top: 0.6em;
       width: 7px; height: 7px; background: var(--accent); transform: rotate(45deg);
     }
+
+    /* ============================================================
+       VOLUNTEERING (dark accent break)
+       ============================================================ */
+    .volunteering { background: var(--charcoal); color: var(--cream); }
+    .vol-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      border: 1px solid var(--charcoal-line);
+      border-radius: 4px;
+      padding: clamp(2rem, 4vw, 3.2rem);
+      background: #222220;
+      align-items: center;
+      transition: border-color .4s var(--ease);
+    }
+    .vol-card:hover { border-color: var(--gold); }
+    .vol-tag {
+      font-family: var(--label);
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(201,168,76,0.5);
+      padding: 0.4rem 0.9rem; border-radius: 100px; display: inline-block; margin-bottom: 1.3rem;
+    }
+    .vol-side h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 600; line-height: 1.1; }
+    .vol-org { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1.1rem; margin-top: 0.4rem; }
+    .vol-meta { font-family: var(--label); font-size: 0.78rem; letter-spacing: 0.08em; color: #8a8378; margin-top: 0.5rem; text-transform: uppercase; }
+    .vol-stat { margin-top: 1.8rem; padding-top: 1.6rem; border-top: 1px solid var(--charcoal-line); }
+    .vol-stat-val { display: block; font-family: var(--serif); font-weight: 800; font-size: clamp(2.6rem, 6vw, 3.8rem); line-height: 1; color: var(--cream); }
+    .vol-stat-val .suffix { color: var(--gold); }
+    .vol-stat-label { display: block; font-size: 0.85rem; color: #b3ada2; margin-top: 0.5rem; max-width: 24ch; }
+    .vol-body ul { list-style: none; display: grid; gap: 1rem; }
+    .vol-body li { position: relative; padding-left: 1.7rem; color: #cfc8bd; font-size: 1rem; }
+    .vol-body li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+    .vol-body li b { color: var(--cream); }
+    @media (max-width: 760px) { .vol-card { grid-template-columns: 1fr; } }
 
     /* ============================================================
        SKILLS
@@ -510,14 +549,14 @@
     .edu-card:hover { border-color: var(--accent); transform: translateY(-4px); }
     .edu-card .degree { font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 700; }
     .edu-card .school { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin: 0.5rem 0; }
-    .edu-card .meta { font-size: 0.85rem; color: #8a8378; letter-spacing: 0.04em; margin-bottom: 1.4rem; }
+    .edu-card .meta { font-family: var(--label); font-size: 0.8rem; color: #8a8378; letter-spacing: 0.06em; margin-bottom: 1.4rem; }
     .edu-card .detail { font-size: 0.94rem; color: #46423b; margin-bottom: 0.5rem; }
     .edu-card .detail b { font-weight: 600; }
     .thesis {
       margin-top: 1.4rem; padding: 1.1rem 1.3rem; border-left: 3px solid var(--accent);
       background: var(--bg-alt); border-radius: 0 4px 4px 0;
     }
-    .thesis small { display: block; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8378; margin-bottom: 0.4rem; }
+    .thesis small { font-family: var(--label); display: block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8378; margin-bottom: 0.4rem; }
     .thesis span { font-family: var(--serif); font-style: italic; font-size: 1.02rem; color: var(--charcoal); }
     .grade-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
     .grade-row span { font-size: 0.74rem; padding: 0.35rem 0.7rem; border-radius: 100px; background: var(--bg-alt); border: 1px solid var(--line); color: #46423b; }
@@ -573,7 +612,7 @@
       transition: padding .35s var(--ease), border-color .35s var(--ease);
     }
     .clink:hover { padding-left: 0.6rem; border-color: var(--gold); }
-    .clink .ck-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8378; }
+    .clink .ck-label { font-family: var(--label); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8378; }
     .clink .ck-val { font-family: var(--serif); font-size: clamp(1.05rem,2vw,1.35rem); }
     .clink .arrow { color: var(--gold); transition: transform .35s var(--ease); }
     .clink:hover .arrow { transform: translateX(6px); }
@@ -597,7 +636,7 @@
     footer.foot .fsocial { display: flex; gap: 1.4rem; }
     footer.foot .fsocial a { font-size: 0.84rem; transition: color .3s var(--ease); }
     footer.foot .fsocial a:hover { color: var(--gold); }
-    footer.foot small { font-size: 0.78rem; }
+    footer.foot small { font-family: var(--label); font-size: 0.76rem; letter-spacing: 0.02em; }
 
     /* ============================================================
        THEME TOGGLE
@@ -718,7 +757,7 @@
       </div>
       <div class="hero-photo">
         <div class="frame">
-          <img src="aditi-hero.png" alt="Aditi Singh — MBA graduate and operations professional, Berlin" />
+          <img src="aditi-hero.png" alt="Aditi Singh, MBA graduate and operations professional, Berlin" />
         </div>
         <div class="badge">Berlin · 2026</div>
         <div class="vert-label">Operations · Strategy · AI</div>
@@ -737,10 +776,10 @@
         <div class="about-bio">
           <span class="eyebrow reveal">The short version</span>
           <h2 class="section-title reveal" style="margin-bottom:1.8rem;">Built to turn <em>complexity</em><br>into clarity.</h2>
-          <p class="reveal d1">I'm an MBA graduate and operations professional who has spent <strong>4+ years coordinating complex, multi-workstream projects</strong> across three international markets at once — and delivering measurable results every time.</p>
-          <p class="reveal d2">I build data-driven reporting systems, implement AI workflows that cut manual overhead, and diagnose the structural inefficiencies most people learn to live with. My MBA research focused on AI implementation strategy in global organisations — so I bring both the academic framework and the hands-on execution.</p>
+          <p class="reveal d1">I'm an MBA graduate and operations professional who has spent <strong>4+ years coordinating complex, multi-workstream projects</strong> across three international markets at once, and delivered measurable results every time.</p>
+          <p class="reveal d2">I build data-driven reporting systems, implement AI workflows that cut manual overhead, and diagnose the structural inefficiencies most people learn to live with. My MBA research focused on AI implementation strategy in global organisations, so I bring both the academic framework and the hands-on execution.</p>
           <p class="reveal d3">As an active content creator, I understand digital production and brand communication from the inside. I'm based in Berlin, EU work authorised, and ready to contribute from day one.</p>
-          <p class="about-sign reveal d3">— Aditi</p>
+          <p class="about-sign reveal d3">Aditi</p>
         </div>
         <div class="reveal d2">
           <dl class="about-facts">
@@ -766,23 +805,23 @@
       <div class="section-head">
         <span class="eyebrow reveal">Track record</span>
         <h2 class="section-title reveal d1">Experience that <em>compounds</em>.</h2>
-        <p class="reveal d2">Four roles across three continents — each one a study in coordinating people, systems, and outcomes under real constraints. Tap any role to open it.</p>
+        <p class="reveal d2">Three roles across three international markets, each one a study in coordinating people, systems, and outcomes under real constraints. Tap any role to open it.</p>
       </div>
       <div class="timeline" id="timeline">
         <!-- Item 1 -->
         <div class="exp-item active">
           <button class="exp-head">
             <span class="exp-yr">Nov 2025 – Mar 2026</span>
-            <span class="exp-role"><h3>Intern — Operations &amp; Strategy Support</h3><span class="org">Togethina · Berlin</span></span>
+            <span class="exp-role"><h3>Operations &amp; Strategy Support Intern</h3><span class="org">Togethina · Berlin</span></span>
             <span class="exp-loc">Berlin</span>
             <span class="exp-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
           <div class="exp-body"><div class="exp-body-inner"><ul>
-            <li>Owned <b>10 concurrent brand portfolios</b> across marketing, operations, and strategy — driving each from brief to delivery.</li>
+            <li>Owned <b>10 concurrent brand portfolios</b> across marketing, operations, and strategy, driving each from brief to delivery.</li>
             <li>Built KPI tracking dashboards that <b>reduced leadership reporting time by 40%</b>.</li>
             <li>Executed 4 go-to-market campaigns achieving a <b>25% average engagement uplift</b> per launch.</li>
-            <li>Planned and delivered <b>10 events and workshops end to end</b> — logistics, suppliers, budgets, stakeholder comms.</li>
-            <li>Implemented AI &amp; automation workflows (Claude, ChatGPT, Notion AI) across 4 teams — <b>40% reduction in manual overhead</b>.</li>
+            <li>Planned and delivered <b>10 events and workshops end to end</b>: logistics, suppliers, budgets, stakeholder comms.</li>
+            <li>Implemented AI &amp; automation workflows (Claude, ChatGPT, Notion AI) across 4 teams, cutting <b>manual overhead by 40%</b>.</li>
             <li>Led end-to-end content strategy and SEO copywriting; produced <b>7+ published blog articles</b> for Berlin audiences.</li>
             <li>Conducted primary market research and user surveys; synthesised insights into editorial strategy.</li>
           </ul></div></div>
@@ -798,8 +837,8 @@
           <div class="exp-body"><div class="exp-body-inner"><ul>
             <li>Managed end-to-end operations across <b>3 international markets simultaneously</b>, coordinating <b>40+ team members</b>.</li>
             <li>Sustained <b>SLA compliance above 95%</b> over 17 months.</li>
-            <li>Diagnosed a systemic cross-market process failure and led corrective rollout in 6 weeks → <b>18% efficiency improvement, 20% fewer complaints</b>.</li>
-            <li>Built operational infrastructure across 2 markets from scratch — <b>reduced ramp time by 30%</b>.</li>
+            <li>Diagnosed a systemic cross-market process failure and led a corrective rollout in 6 weeks, driving an <b>18% efficiency improvement and 20% fewer complaints</b>.</li>
+            <li>Built operational infrastructure across 2 markets from scratch, <b>reducing ramp time by 30%</b>.</li>
             <li>Produced bi-weekly performance dashboards and executive reports for senior stakeholders.</li>
             <li>Recognised as <b>Employee of the Month (×2)</b>.</li>
           </ul></div></div>
@@ -815,24 +854,40 @@
           <div class="exp-body"><div class="exp-body-inner"><ul>
             <li>Managed <b>80+ daily client interactions</b> with a <b>94%+ quality score</b> over 14 months.</li>
             <li>Ranked in the <b>top 10%</b> of team performance.</li>
-            <li>Identified a structural process gap across 500+ cases; proposed root-cause fix → <b>company-wide adoption in 2 weeks</b>.</li>
+            <li>Identified a structural process gap across 500+ cases and proposed a root-cause fix that won <b>company-wide adoption in 2 weeks</b>.</li>
             <li>Implemented protocols that <b>reduced average response time by 20%</b> and increased FCR by 10%.</li>
             <li><b>Employee of the Week ×4</b>; contributed to a 30% reduction in churn rate.</li>
           </ul></div></div>
         </div>
-        <!-- Item 4 -->
-        <div class="exp-item">
-          <button class="exp-head">
-            <span class="exp-yr">Nov 2025 – Present</span>
-            <span class="exp-role"><h3>Career Coach &amp; Programme Lead</h3><span class="org">Imagine Foundation · Volunteer</span></span>
-            <span class="exp-loc">Berlin</span>
-            <span class="exp-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="exp-body"><div class="exp-body-inner"><ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VOLUNTEERING ===================== -->
+  <section class="volunteering pad" id="volunteering">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow reveal">Beyond the day job</span>
+        <h2 class="section-title reveal d1" style="color:var(--cream);">Volunteering.</h2>
+        <p class="reveal d2" style="color:#b3ada2;">Helping Berlin's international community build the careers they came here for.</p>
+      </div>
+      <div class="vol-card reveal d1">
+        <div class="vol-side">
+          <span class="vol-tag">Volunteer</span>
+          <h3>Career Coach &amp; Programme Lead</h3>
+          <p class="vol-org">Imagine Foundation</p>
+          <p class="vol-meta">Nov 2025 – Present · Berlin</p>
+          <div class="vol-stat">
+            <span class="vol-stat-val">78<span class="suffix">%</span></span>
+            <span class="vol-stat-label">placement rate within 3 months</span>
+          </div>
+        </div>
+        <div class="vol-body">
+          <ul>
             <li>Designs and delivers a structured career development programme for <b>20+ international professionals</b>.</li>
             <li>Manages all content, scheduling, and outcomes tracking independently.</li>
-            <li>Achieved a <b>78% placement rate within 3 months</b>.</li>
-          </ul></div></div>
+            <li>Built the programme from the ground up, owning everything from curriculum to results.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -899,28 +954,28 @@
       <div class="section-head">
         <span class="eyebrow reveal">Selected work</span>
         <h2 class="section-title reveal d1">Things I've <em>built</em>.</h2>
-        <p class="reveal d2">Systems, tools, and research — not just deliverables. Hover any card to see what's under the hood.</p>
+        <p class="reveal d2">Systems, tools, and research, not just deliverables. Hover any card to see what's under the hood.</p>
       </div>
       <div class="proj-grid">
         <div class="proj-card reveal">
           <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           <span class="proj-index">01</span>
           <h3>AI-Augmented Job Search Operating System</h3>
-          <p class="desc">A full relational database in Notion — live application pipeline, company research hub, JD keyword tracker, AI prompt library, and a weekly KPI dashboard. Systems thinking, AI literacy and project management, made tangible.</p>
+          <p class="desc">A full relational database in Notion: a live application pipeline, company research hub, JD keyword tracker, AI prompt library, and a weekly KPI dashboard. Systems thinking, AI literacy and project management, made tangible.</p>
           <div class="proj-stack"><span>Notion</span><span>Notion AI</span><span>Relational DB</span><span>Kanban</span><span>Dashboard design</span></div>
         </div>
         <div class="proj-card reveal d1">
           <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           <span class="proj-index">02</span>
           <h3>Instagram Growth Agent</h3>
-          <p class="desc">An AI-powered web tool combining content-strategy coaching, hashtag SEO recommendations, and content-calendar generation — built on the Claude API. Product thinking and AI tool-building in one shipped artifact.</p>
+          <p class="desc">An AI-powered web tool combining content-strategy coaching, hashtag SEO recommendations, and content-calendar generation, built on the Claude API. Product thinking and AI tool-building in one shipped artifact.</p>
           <div class="proj-stack"><span>React</span><span>Claude API</span><span>UI/UX design</span></div>
         </div>
         <div class="proj-card reveal d2">
           <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           <span class="proj-index">03</span>
-          <h3>MBA Thesis — AI in Global Project Management</h3>
-          <p class="desc">A research paper mapping the barriers, enablers, and a scalable roadmap for AI implementation in global project-management environments — grounded in primary research with global participants.</p>
+          <h3>MBA Thesis: AI in Global Project Management</h3>
+          <p class="desc">A research paper mapping the barriers, enablers, and a scalable roadmap for AI implementation in global project-management environments, grounded in primary research with global participants.</p>
           <p class="proj-outcome">Publication-ready · enterprise-applicable framework</p>
           <div class="proj-stack"><span>Primary research</span><span>Strategy roadmap</span><span>AI adoption</span></div>
         </div>
@@ -928,7 +983,7 @@
           <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           <span class="proj-index">04</span>
           <h3>KPI Dashboards &amp; Reporting Infrastructure</h3>
-          <p class="desc">Real-time KPI tracking dashboards for a Berlin startup's leadership team — live visibility into 10 concurrent brand workstreams, with reporting time cut by 40%.</p>
+          <p class="desc">Real-time KPI tracking dashboards for a Berlin startup's leadership team, giving live visibility into 10 concurrent brand workstreams, with reporting time cut by 40%.</p>
           <p class="proj-outcome">40% faster reporting · live workstream visibility</p>
           <div class="proj-stack"><span>Advanced Excel</span><span>Power BI</span><span>Notion</span></div>
         </div>
@@ -965,7 +1020,7 @@
           <div class="school">IEC University, India</div>
           <div class="meta">2018 – 2021</div>
           <p class="detail"><b>First Class</b></p>
-          <p class="detail" style="color:#8a8378; margin-top:0.8rem;">Bachelor of Business Administration — the foundation in management, operations and strategy that the MBA built upon.</p>
+          <p class="detail" style="color:#8a8378; margin-top:0.8rem;">Bachelor of Business Administration: the foundation in management, operations and strategy that the MBA built upon.</p>
         </div>
       </div>
     </div>
@@ -1020,7 +1075,7 @@
           <p class="lead reveal d2">I'm actively seeking entry-level and junior roles in Project Management, Business Analysis, AI Product, and Digital Transformation. If that sounds like your team, I'd love to hear from you.</p>
           <div class="contact-loc reveal d2">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Berlin, Germany — open to Berlin-based &amp; remote EU roles
+            Berlin, Germany. Open to Berlin-based &amp; remote EU roles
           </div>
         </div>
         <div class="contact-links reveal d2">

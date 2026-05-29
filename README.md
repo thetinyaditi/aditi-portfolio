@@ -14,9 +14,12 @@ frameworks — just open it or drop it on any static host (Netlify, GitHub Pages
 - Expandable experience timeline
 - Hover-reveal project cards with tech stacks
 - Animated language proficiency bars
+- Dedicated Volunteering section (Imagine Foundation career coaching)
 - Optional dark-mode toggle
 - Fully responsive (mobile-first), with a hamburger menu on small screens
-- Google Fonts (Playfair Display + Plus Jakarta Sans); no other dependencies
+- Three-font system via Google Fonts, each with a role: Playfair Display
+  (display headings), Plus Jakarta Sans (body), Space Grotesk (labels/metadata);
+  no other dependencies
 - SEO/meta + Open Graph tags
 
 ## Assets in the repo
