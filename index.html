@@ -121,6 +121,18 @@
     /* ============================================================
        NAV
        ============================================================ */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0;
+      height: 2px; width: 100%;
+      transform: scaleX(0); transform-origin: 0 50%;
+      background: linear-gradient(90deg, var(--gold), var(--amber));
+      z-index: 200; pointer-events: none;
+      will-change: transform;
+    }
+
+    /* parallax layers get GPU hinting; JS sets the translate */
+    .hero-copy, .hero-photo { will-change: transform; }
+
     header.nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -710,6 +722,9 @@
 </head>
 <body>
 
+  <!-- scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <a href="#top" class="brand">Aditi Singh<span class="dot">.</span></a>
@@ -1119,11 +1134,37 @@
     // fallback if load already fired
     setTimeout(() => document.querySelector('.hero').classList.add('loaded'), 400);
 
-    /* ---------- Nav scroll state ---------- */
+    /* ---------- Unified scroll: nav state, progress bar, hero parallax ---------- */
     const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    const progress = document.getElementById('scrollProgress');
+    const heroEl = document.querySelector('.hero');
+    const heroCopy = document.querySelector('.hero-copy');
+    const heroFrame = document.querySelector('.hero-photo .frame');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let ticking = false;
+    function updateScroll() {
+      const y = window.scrollY;
+
+      // nav background
+      nav.classList.toggle('scrolled', y > 40);
+
+      // thin top progress bar
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = 'scaleX(' + (docH > 0 ? Math.min(y / docH, 1) : 0) + ')';
+
+      // subtle hero parallax (only while the hero is on screen)
+      if (!reduceMotion && heroEl && y < heroEl.offsetHeight) {
+        if (heroFrame) heroFrame.style.transform = 'translate3d(0,' + (y * 0.18) + 'px,0)';
+        if (heroCopy)  heroCopy.style.transform  = 'translate3d(0,' + (y * 0.06) + 'px,0)';
+      }
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
+    }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    updateScroll();
 
     /* ---------- Mobile menu ---------- */
     const burger = document.getElementById('burger');
