@@ -23,10 +23,10 @@ frameworks — just open it or drop it on any static host (Netlify, GitHub Pages
 - SEO/meta + Open Graph tags
 
 ## Assets in the repo
-- **Headshot** — `aditi-hero.png` (800×800), shown as a circular portrait in the hero.
+- **Headshot:** `aditi-hero.png` (800×800), shown as a circular portrait in the hero.
   To change it, replace the file (keep the name, or update the `<img src>` and the
   `og:image` meta tag).
-- **CV** — `Aditi_Singh_General_CV.docx`, linked from the *Download CV* button.
+- **CV:** `Aditi_Singh_CV.pdf`, linked from the *Download CV* button.
   Swap the file (or point the `#cvBtn` anchor elsewhere) to update it.
 
 ## Run locally
