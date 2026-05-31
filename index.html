@@ -113,10 +113,10 @@
     }
     .section-title em { font-style: italic; color: var(--accent); }
 
-    .section-head { max-width: 760px; margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
-    .section-head p { color: var(--fg-soft); font-size: 1.05rem; margin-top: 1.1rem; max-width: 56ch; }
+    .section-head { max-width: 760px; margin-bottom: clamp(1.8rem, 4vw, 3rem); }
+    .section-head p { color: var(--fg-soft); font-size: 1.05rem; margin-top: 1rem; max-width: 56ch; }
 
-    .pad { padding: clamp(5rem, 12vw, 9rem) 0; }
+    .pad { padding: clamp(3.5rem, 8vw, 6rem) 0; }
 
     /* ============================================================
        NAV
@@ -425,19 +425,17 @@
     .exp-item.active { border-color: var(--accent); box-shadow: 0 24px 60px -30px rgba(0,0,0,0.25); }
     .exp-head {
       display: grid;
-      grid-template-columns: auto 1fr auto auto;
+      grid-template-columns: auto 1fr auto;
       gap: 1.5rem; align-items: center;
-      padding: 1.8rem clamp(1.3rem, 3vw, 2.4rem);
+      padding: 1.15rem clamp(1.3rem, 3vw, 2.2rem);
       cursor: pointer;
       width: 100%; text-align: left; background: none; border: 0; font-family: inherit; color: inherit;
     }
-    .exp-yr { font-family: var(--label); font-size: 0.82rem; letter-spacing: 0.06em; color: var(--accent); font-weight: 600; white-space: nowrap; }
-    .exp-role { }
-    .exp-role h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 600; }
-    .exp-role .org { font-size: 0.9rem; color: #8a8378; margin-top: 0.2rem; }
-    .exp-loc { font-family: var(--label); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8378; white-space: nowrap; }
+    .exp-yr { font-family: var(--label); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--accent); font-weight: 600; white-space: nowrap; }
+    .exp-company { font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.1; }
+    .exp-prog { font-family: var(--label); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8378; margin-left: 0.6rem; white-space: nowrap; }
     .exp-toggle {
-      width: 38px; height: 38px; border-radius: 50%;
+      width: 34px; height: 34px; border-radius: 50%;
       border: 1px solid var(--line);
       display: grid; place-items: center;
       transition: transform .4s var(--ease), background .4s var(--ease), border-color .4s var(--ease);
@@ -448,8 +446,14 @@
     .exp-item.active .exp-toggle svg { transform: rotate(45deg); }
 
     .exp-body { max-height: 0; overflow: hidden; transition: max-height .55s var(--ease); }
-    .exp-body-inner { padding: 0 clamp(1.3rem, 3vw, 2.4rem) 2rem; }
-    .exp-body-inner ul { list-style: none; display: grid; gap: 0.85rem; max-width: 78ch; }
+    .exp-body-inner { padding: 0.2rem clamp(1.3rem, 3vw, 2.2rem) 1.8rem; }
+    .exp-role-title {
+      font-family: var(--sans); font-weight: 700; font-size: 1.02rem;
+      color: var(--charcoal); margin-bottom: 1.1rem;
+      padding-top: 0.4rem; border-top: 1px solid var(--line);
+    }
+    .exp-role-title span { font-weight: 500; color: #8a8378; }
+    .exp-body-inner ul { list-style: none; display: grid; gap: 0.7rem; max-width: 78ch; }
     .exp-body-inner li { position: relative; padding-left: 1.7rem; color: #46423b; font-size: 0.97rem; }
     .experience.dark .exp-body-inner li { color: var(--fg-soft); }
     .exp-body-inner li::before {
@@ -696,9 +700,9 @@
     }
     @media (max-width: 720px) {
       .skill-grid, .proj-grid, .edu-grid, .cert-row { grid-template-columns: 1fr; }
-      .exp-head { grid-template-columns: 1fr auto; gap: 0.8rem 1rem; }
+      .exp-head { grid-template-columns: 1fr auto; gap: 0.5rem 1rem; }
       .exp-yr { grid-column: 1 / -1; order: -1; }
-      .exp-loc { display: none; }
+      .exp-prog { display: block; margin-left: 0; margin-top: 0.2rem; }
       nav.links {
         position: fixed; inset: 0; background: rgba(20,20,19,0.97); backdrop-filter: blur(10px);
         flex-direction: column; justify-content: center; gap: 1.8rem;
@@ -820,18 +824,19 @@
       <div class="section-head" data-parallax="0.07">
         <span class="eyebrow reveal">Track record</span>
         <h2 class="section-title reveal d1">Experience that <em>compounds</em>.</h2>
-        <p class="reveal d2">Three roles across three international markets, each one a study in coordinating people, systems, and outcomes under real constraints. Tap any role to open it.</p>
+        <p class="reveal d2">Three roles across three international markets, each one a study in coordinating people, systems, and outcomes under real constraints. Tap a company to open the full role.</p>
       </div>
       <div class="timeline" id="timeline">
         <!-- Item 1 -->
-        <div class="exp-item active">
+        <div class="exp-item">
           <button class="exp-head">
             <span class="exp-yr">Nov 2025 – Mar 2026</span>
-            <span class="exp-role"><h3>Operations &amp; Strategy Support Intern</h3><span class="org">Togethina · Berlin</span></span>
-            <span class="exp-loc">Berlin</span>
+            <span class="exp-company">Togethina</span>
             <span class="exp-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
-          <div class="exp-body"><div class="exp-body-inner"><ul>
+          <div class="exp-body"><div class="exp-body-inner">
+            <p class="exp-role-title">Operations &amp; Strategy Support Intern <span>· Berlin</span></p>
+            <ul>
             <li>Owned <b>10 concurrent brand portfolios</b> across marketing, operations, and strategy, driving each from brief to delivery.</li>
             <li>Built KPI tracking dashboards that <b>reduced leadership reporting time by 40%</b>.</li>
             <li>Executed 4 go-to-market campaigns achieving a <b>25% average engagement uplift</b> per launch.</li>
@@ -845,11 +850,12 @@
         <div class="exp-item">
           <button class="exp-head">
             <span class="exp-yr">Jul 2022 – Dec 2023</span>
-            <span class="exp-role"><h3>Operations Support Specialist</h3><span class="org">TaskUs · DoorDash Programme</span></span>
-            <span class="exp-loc">Remote · US/CA/AU</span>
+            <span class="exp-company">TaskUs <span class="exp-prog">DoorDash Programme</span></span>
             <span class="exp-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
-          <div class="exp-body"><div class="exp-body-inner"><ul>
+          <div class="exp-body"><div class="exp-body-inner">
+            <p class="exp-role-title">Operations Support Specialist <span>· Remote · US/CA/AU</span></p>
+            <ul>
             <li>Managed end-to-end operations across <b>3 international markets simultaneously</b>, coordinating <b>40+ team members</b>.</li>
             <li>Sustained <b>SLA compliance above 95%</b> over 17 months.</li>
             <li>Diagnosed a systemic cross-market process failure and led a corrective rollout in 6 weeks, driving an <b>18% efficiency improvement and 20% fewer complaints</b>.</li>
@@ -862,11 +868,12 @@
         <div class="exp-item">
           <button class="exp-head">
             <span class="exp-yr">May 2021 – Jul 2022</span>
-            <span class="exp-role"><h3>Client Services Associate</h3><span class="org">Concentrix · Amazon Programme</span></span>
-            <span class="exp-loc">Remote · NA/CA</span>
+            <span class="exp-company">Concentrix <span class="exp-prog">Amazon Programme</span></span>
             <span class="exp-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
-          <div class="exp-body"><div class="exp-body-inner"><ul>
+          <div class="exp-body"><div class="exp-body-inner">
+            <p class="exp-role-title">Client Services Associate <span>· Remote · NA/CA</span></p>
+            <ul>
             <li>Managed <b>80+ daily client interactions</b> with a <b>94%+ quality score</b> over 14 months.</li>
             <li>Ranked in the <b>top 10%</b> of team performance.</li>
             <li>Identified a structural process gap across 500+ cases and proposed a root-cause fix that won <b>company-wide adoption in 2 weeks</b>.</li>
